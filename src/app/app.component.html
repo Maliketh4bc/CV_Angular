@@ -1,0 +1,55 @@
+<header>
+  <p>{{ nombre }}</p>
+  <p>{{ puesto }}</p>
+  <nav>
+    <a href="#main">Main</a>
+    <a href="#footer">Footer</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside>
+    <h2>Contacto</h2>
+    <p>{{ email }}</p>
+    <p>{{ telefono }}</p>
+    <p>{{ ubicacion }}</p>
+
+    <h2>Habilidades</h2>
+    <p>{{ habilidades }}</p>
+  </aside>
+
+  <main>
+    <section>
+      <h2>Sobre mí</h2>
+      <p>{{ sobreMi }}</p>
+    </section>
+
+    <section>
+      <h2>Experiencia</h2>
+
+      <div class="item">
+        <h3>{{ exp1Puesto }} - {{ exp1Empresa }}</h3>
+        <p class="periodo">{{ exp1Periodo }}</p>
+        <p>{{ exp1Descripcion }}</p>
+      </div>
+
+      <div class="item">
+        <h3>{{ exp2Puesto }} - {{ exp2Empresa }}</h3>
+        <p class="periodo">{{ exp2Periodo }}</p>
+        <p>{{ exp2Descripcion }}</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Educación</h2>
+      <div class="item">
+        <h3>{{ eduTitulo }}</h3>
+        <p class="periodo">{{ eduCentro }} - {{ eduPeriodo }}</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer id="footer">
+  {{ nombre }} {{ fecha | date: 'dd/MM/yyyy' }}
+</footer>
