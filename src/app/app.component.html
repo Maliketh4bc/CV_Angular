@@ -10,17 +10,21 @@
 <div class="main">
   <aside>
     <h2>Contacto</h2>
-    <p>{{ email }}</p>
-    <p>{{ telefono }}</p>
     <p>{{ ubicacion }}</p>
+    <p>{{ telefono }}</p>
+    <p>{{ email }}</p>
+    <p>{{ github }}</p>
 
-    <h2>Habilidades</h2>
-    <p>{{ habilidades }}</p>
+    <h2>Idiomas</h2>
+    @for (idioma of idiomas; track idioma) {
+      <p>{{ idioma }}</p>
+    }
   </aside>
 
-  <main>
+  <main id="main">
     <section>
       <h2>Sobre mí</h2>
+      <img ngSrc="foto_carnet_marco.jpg" width="150" height="150" alt="Foto de {{ nombre }}" priority />
       <p>{{ sobreMi }}</p>
     </section>
 
@@ -47,9 +51,18 @@
         <p class="periodo">{{ eduCentro }} - {{ eduPeriodo }}</p>
       </div>
     </section>
+
+    <section>
+      <h2>Tecnologías</h2>
+      <ul>
+        @for (tec of tecnologias; track tec) {
+          <li>{{ tec }}</li>
+        }
+      </ul>
+    </section>
   </main>
 </div>
 
 <footer id="footer">
-  {{ nombre }} {{ fecha | date: 'dd/MM/yyyy' }}
+  {{ textoPie }} - {{ fecha | date: 'dd/MM/yyyy' }}
 </footer>
