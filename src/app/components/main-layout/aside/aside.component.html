@@ -1,0 +1,12 @@
+  <aside>
+    <h2>Contacto</h2>
+    <p>{{ ubicacion }}</p>
+    <p>{{ telefono }}</p>
+    <p>{{ email }}</p>
+    <p>{{ github }}</p>
+
+    <h2>Idiomas</h2>
+    @for (idioma of idiomas; track idioma) {
+      <p>{{ idioma }}</p>
+    }
+  </aside>

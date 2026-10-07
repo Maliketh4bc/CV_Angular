@@ -1,0 +1,40 @@
+<main id="main">
+    <section>
+      <h2>Sobre mí</h2>
+      <img ngSrc="foto_carnet_marco.jpg" width="150" height="150" alt="Foto de {{ nombre }}" priority />
+      <p>{{ sobreMi }}</p>
+    </section>
+
+    <section>
+      <h2>Experiencia</h2>
+
+      <div class="item">
+        <h3>{{ exp1Puesto }} - {{ exp1Empresa }}</h3>
+        <p class="periodo">{{ exp1Periodo }}</p>
+        <p>{{ exp1Descripcion }}</p>
+      </div>
+
+      <div class="item">
+        <h3>{{ exp2Puesto }} - {{ exp2Empresa }}</h3>
+        <p class="periodo">{{ exp2Periodo }}</p>
+        <p>{{ exp2Descripcion }}</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Educación</h2>
+      <div class="item">
+        <h3>{{ eduTitulo }}</h3>
+        <p class="periodo">{{ eduCentro }} - {{ eduPeriodo }}</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tecnologías</h2>
+      <ul>
+        @for (tec of tecnologias; track tec) {
+          <li>{{ tec }}</li>
+        }
+      </ul>
+    </section>
+  </main>
