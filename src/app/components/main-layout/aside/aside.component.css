@@ -1,0 +1,48 @@
+:host {
+  flex: 0 0 28%;
+}
+
+aside {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 4px;
+  height: 100%;
+}
+
+h2 {
+  margin: 1rem 0 0.5rem;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+.btn-contacto {
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.etiqueta {
+  background-color: white;
+  border: 1px solid #2c3e50;
+  color: #2c3e50;
+  border-radius: 12px;
+  padding: 0.2rem 0.7rem;
+  cursor: pointer;
+}
+
+.etiqueta.seleccionada {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.seleccion {
+  margin-top: 0.75rem;
+}

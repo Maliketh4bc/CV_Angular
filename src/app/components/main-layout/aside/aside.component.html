@@ -1,0 +1,37 @@
+<aside>
+  <h2>Contacto</h2>
+
+  <button class="btn-contacto" (click)="alternarContacto()">
+    {{ mostrarContacto ? 'Ocultar' : 'Mostrar' }} datos de contacto
+  </button>
+
+  @if (mostrarContacto) {
+    <p>{{ ubicacion }}</p>
+    <p>{{ telefono }}</p>
+    <p>{{ email }}</p>
+    <p>{{ github }}</p>
+  }
+
+  <h2>Idiomas</h2>
+  @for (idioma of idiomas; track idioma) {
+    <p>{{ idioma }}</p>
+  }
+
+  <h2>Tecnologías</h2>
+  <div class="etiquetas">
+    @for (tec of tecnologias; track tec) {
+      <button
+        class="etiqueta"
+        [class.seleccionada]="tec === tecnologiaSeleccionada"
+        (click)="seleccionarTecnologia(tec)">
+        {{ tec }}
+      </button>
+    } @empty {
+      <p>No hay tecnologías añadidas.</p>
+    }
+  </div>
+
+  @if (tecnologiaSeleccionada) {
+    <p class="seleccion">Tecnología seleccionada: <strong>{{ tecnologiaSeleccionada }}</strong></p>
+  }
+</aside>

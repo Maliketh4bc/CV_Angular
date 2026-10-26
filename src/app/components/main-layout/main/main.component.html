@@ -1,0 +1,45 @@
+<main>
+  @switch (seccion()) {
+    @case ('resumen') {
+      <section>
+        <h2>Sobre mí</h2>
+        <!-- Property binding sobre propiedades HTML de la imagen -->
+        <img [src]="foto" [alt]="'Foto de ' + nombre" width="150" height="150" />
+        <p>{{ sobreMi }}</p>
+      </section>
+    }
+
+    @case ('experiencia') {
+      <section>
+        <h2>Experiencia profesional</h2>
+        @for (exp of experiencias; track exp.id) {
+          <div class="item">
+            <h3>{{ exp.puesto }} - {{ exp.empresa }}</h3>
+            <p class="periodo">{{ exp.periodo }}</p>
+            <p>{{ exp.descripcion }}</p>
+          </div>
+        } @empty {
+          <p class="vacio">Todavía no se ha añadido experiencia profesional.</p>
+        }
+      </section>
+    }
+
+    @case ('formacion') {
+      <section>
+        <h2>Formación</h2>
+        @for (edu of formacion; track edu.id) {
+          <div class="item">
+            <h3>{{ edu.titulo }}</h3>
+            <p class="periodo">{{ edu.centro }} - {{ edu.periodo }}</p>
+          </div>
+        } @empty {
+          <p class="vacio">Todavía no se ha añadido formación.</p>
+        }
+      </section>
+    }
+
+    @default {
+      <p>Selecciona una sección del CV.</p>
+    }
+  }
+</main>
