@@ -1,40 +1,45 @@
-<main id="main">
-    <section>
-      <h2>Sobre mí</h2>
-      <img ngSrc="foto_carnet_marco.jpg" width="150" height="150" alt="Foto de {{ nombre }}" priority />
-      <p>{{ sobreMi }}</p>
-    </section>
+<main>
+  @switch (seccion()) {
+    @case ('resumen') {
+      <section>
+        <h2>Sobre mí</h2>
+        <!-- Property binding sobre propiedades HTML de la imagen -->
+        <img [src]="foto" [alt]="'Foto de ' + nombre" width="150" height="150" />
+        <p>{{ sobreMi }}</p>
+      </section>
+    }
 
-    <section>
-      <h2>Experiencia</h2>
-
-      <div class="item">
-        <h3>{{ exp1Puesto }} - {{ exp1Empresa }}</h3>
-        <p class="periodo">{{ exp1Periodo }}</p>
-        <p>{{ exp1Descripcion }}</p>
-      </div>
-
-      <div class="item">
-        <h3>{{ exp2Puesto }} - {{ exp2Empresa }}</h3>
-        <p class="periodo">{{ exp2Periodo }}</p>
-        <p>{{ exp2Descripcion }}</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Educación</h2>
-      <div class="item">
-        <h3>{{ eduTitulo }}</h3>
-        <p class="periodo">{{ eduCentro }} - {{ eduPeriodo }}</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Tecnologías</h2>
-      <ul>
-        @for (tec of tecnologias; track tec) {
-          <li>{{ tec }}</li>
+    @case ('experiencia') {
+      <section>
+        <h2>Experiencia profesional</h2>
+        @for (exp of experiencias; track exp.id) {
+          <div class="item">
+            <h3>{{ exp.puesto }} - {{ exp.empresa }}</h3>
+            <p class="periodo">{{ exp.periodo }}</p>
+            <p>{{ exp.descripcion }}</p>
+          </div>
+        } @empty {
+          <p class="vacio">Todavía no se ha añadido experiencia profesional.</p>
         }
-      </ul>
-    </section>
-  </main>
+      </section>
+    }
+
+    @case ('formacion') {
+      <section>
+        <h2>Formación</h2>
+        @for (edu of formacion; track edu.id) {
+          <div class="item">
+            <h3>{{ edu.titulo }}</h3>
+            <p class="periodo">{{ edu.centro }} - {{ edu.periodo }}</p>
+          </div>
+        } @empty {
+          <p class="vacio">Todavía no se ha añadido formación.</p>
+        }
+      </section>
+    }
+
+    @default {
+      <p>Selecciona una sección del CV.</p>
+    }
+  }
+</main>

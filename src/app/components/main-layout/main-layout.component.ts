@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { AsideComponent } from './aside/aside.component';
-import { MainComponent } from './main/main.component';
+import { Component, input } from '@angular/core';
+import { AsideComponent } from '../aside/aside.component';
+import { MainComponent } from '../main/main.component';
+import { Seccion } from '../cv.model';
 
 @Component({
   selector: 'app-main-layout',
@@ -9,5 +10,6 @@ import { MainComponent } from './main/main.component';
   styleUrl: './main-layout.component.css'
 })
 export class MainLayoutComponent {
-
+  // Recibe la sección de AppComponent y la reenvía a MainComponent
+  seccion = input<Seccion>('resumen');
 }

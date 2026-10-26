@@ -1,8 +1,27 @@
 <header>
-  <p>{{ nombre }}</p>
+  <p class="nombre">{{ nombre }}</p>
   <p>{{ puesto }}</p>
+
   <nav>
-    <a href="#main">Main</a>
-    <a href="#footer">Footer</a>
+    <button
+      (click)="seleccionar('resumen')"
+      [class.activo]="seccionActiva() === 'resumen'"
+      [disabled]="seccionActiva() === 'resumen'">
+      Resumen
+    </button>
+
+    <button
+      (click)="seleccionar('experiencia')"
+      [class.activo]="seccionActiva() === 'experiencia'"
+      [disabled]="seccionActiva() === 'experiencia'">
+      Experiencia
+    </button>
+
+    <button
+      (click)="seleccionar('formacion')"
+      [class.activo]="seccionActiva() === 'formacion'"
+      [disabled]="seccionActiva() === 'formacion'">
+      Formación
+    </button>
   </nav>
 </header>

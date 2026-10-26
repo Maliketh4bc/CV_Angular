@@ -1,22 +1,30 @@
-main{
-    background-color: white;
+:host {
+  flex: 1;
 }
 
-main section {
-    margin-bottom: 1.5rem;
+main {
+  background-color: white;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+img {
+  border-radius: 4px;
+  margin-bottom: 1rem;
 }
 
 .item {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .periodo {
-    color: gray;
-    font-size: 0.9rem;
+  color: gray;
+  font-size: 0.9rem;
 }
 
-:host {
-    display: block;
-    flex: 1;
-    min-width: 0;
+.vacio {
+  color: gray;
+  font-style: italic;
 }
