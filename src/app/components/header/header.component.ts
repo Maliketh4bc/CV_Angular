@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { Seccion } from '../cv.model';
+import { Seccion } from '../../cv.model';
 
 @Component({
   selector: 'app-header',

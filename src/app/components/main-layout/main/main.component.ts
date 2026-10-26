@@ -1,6 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Experiencia, Formacion, Seccion } from '../cv.model';
-
+import { Experiencia, Formacion, Seccion } from '../../../cv.model';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
